@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import css from './FeedbackOptions.module.css'
 import Button from '@mui/material/Button';
 
@@ -9,17 +10,18 @@ const FeedbackOptions = ({handleGood, handleNeutral, handleBad}) => {
             <>
            <div className={css.counter}>
         
-               <Button onClick={handleGood}>Good</Button>
+                <Button onClick={handleGood}>Good</Button>
                 <Button onClick={handleNeutral}>Neutral</Button>
                 <Button onClick={handleBad}>Bad</Button>
                 
-                   
            </div>
              </>
-        )
-
-    
+        )  
 }
 
-
+FeedbackOptions.propTypes = {
+  handleGood: PropTypes.func.isRequired,
+  handleNeutral: PropTypes.func.isRequired,
+  handleBad: PropTypes.func.isRequired,
+}
 export default FeedbackOptions;

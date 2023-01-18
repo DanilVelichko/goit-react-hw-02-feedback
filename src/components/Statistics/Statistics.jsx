@@ -9,19 +9,20 @@ const Statistics = ({
   countTotalFeedback,
   countPositiveFeedbackPercentage,
 }) => {
+   const {good, neutral, bad } = state;
   return (
     <>
       <List aria-label="mailbox folders">
         <ListItem>
-          <ListItemText primary={`Good: ${state.good}`} />
+          <ListItemText primary={`Good: ${good}`} />
         </ListItem>
 
         <ListItem>
-          <ListItemText primary={`Neutral: ${state.neutral}`} />
+          <ListItemText primary={`Neutral: ${neutral}`} />
         </ListItem>
 
         <ListItem divider>
-          <ListItemText primary={`Bad: ${state.bad}`} />
+          <ListItemText primary={`Bad: ${bad}`} />
         </ListItem>
 
         <ListItem>

@@ -1,17 +1,15 @@
 import React from 'react';
-import Statistics from 'components/Statistics/Statistics';
-import FeedbackOptions from 'components/FeedbackOptions/FeedbackOptions';
 import Section from 'components/Section/Section';
+import Statistics from 'components/Statistics/Statistics';
 import Notification from 'components/Notification/Notification';
+import FeedbackOptions from 'components/FeedbackOptions/FeedbackOptions';
 
-export class Counter extends React.Component {
+class Counter extends React.Component {
   state = {
     good: 0,
     neutral: 0,
     bad: 0,
   };
-
-  // const { good, neutral, bad } = this.state;
 
   positivePercentage = 0;
   total = 0;
@@ -79,3 +77,4 @@ export class Counter extends React.Component {
     );
   }
 }
+export default Counter;

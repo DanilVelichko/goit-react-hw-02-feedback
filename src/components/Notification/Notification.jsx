@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import List from '@mui/material/List';
-import ListItemText from '@mui/material/ListItemText';
+import React from 'react';
 import ListItem from '@mui/material/ListItem';
+import PropTypes from 'prop-types';
+import ListItemText from '@mui/material/ListItemText';
 
 const Notification = ({ message }) => {
   return (

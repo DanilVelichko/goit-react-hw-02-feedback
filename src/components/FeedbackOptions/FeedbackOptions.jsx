@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import css from './FeedbackOptions.module.css';
+import React from 'react';
 import Button from '@mui/material/Button';
+import PropTypes from 'prop-types';
 
 const FeedbackOptions = ({ handleGood, handleNeutral, handleBad }) => {
   return (

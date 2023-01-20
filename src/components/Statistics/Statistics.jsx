@@ -9,7 +9,7 @@ const Statistics = ({
   countTotalFeedback,
   countPositiveFeedbackPercentage,
 }) => {
-   const {good, neutral, bad } = state;
+  const { good, neutral, bad } = state;
   return (
     <>
       <List aria-label="mailbox folders">

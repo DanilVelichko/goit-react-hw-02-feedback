@@ -14,21 +14,11 @@ class Counter extends React.Component {
   positivePercentage = 0;
   total = 0;
 
-  handleGood = e => {
-    this.setState(prevState => {
-      return { good: prevState.good + 1 };
-    });
-  };
+  handleButtons = e => {
+    const clickResult = e.target.textContent;
 
-  handleNeutral = e => {
     this.setState(prevState => {
-      return { neutral: prevState.neutral + 1 };
-    });
-  };
-
-  handleBad = e => {
-    this.setState(prevState => {
-      return { bad: prevState.bad + 1 };
+      return { [clickResult]: prevState[clickResult] + 1 };
     });
   };
 
@@ -53,9 +43,8 @@ class Counter extends React.Component {
       <>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            handleGood={this.handleGood}
-            handleNeutral={this.handleNeutral}
-            handleBad={this.handleBad}
+            handleButtons={this.handleButtons}
+            state={this.state}
           />
         </Section>
 

@@ -3,22 +3,25 @@ import React from 'react';
 import Button from '@mui/material/Button';
 import PropTypes from 'prop-types';
 
-const FeedbackOptions = ({ handleGood, handleNeutral, handleBad }) => {
+const FeedbackOptions = ({ state, handleButtons }) => {
   return (
     <>
       <div className={css.counter}>
-        <Button onClick={handleGood}>Good</Button>
-        <Button onClick={handleNeutral}>Neutral</Button>
-        <Button onClick={handleBad}>Bad</Button>
+        {Object.keys(state).map(keyName => {
+          return <Button onClick={handleButtons}>{keyName}</Button>;
+        })}
       </div>
     </>
   );
 };
 
 FeedbackOptions.propTypes = {
-  handleGood: PropTypes.func.isRequired,
-  handleNeutral: PropTypes.func.isRequired,
-  handleBad: PropTypes.func.isRequired,
+  handleButtons: PropTypes.func.isRequired,
+  state: PropTypes.shape({
+    good: PropTypes.number.isRequired,
+    neutral: PropTypes.number.isRequired,
+    bad: PropTypes.number.isRequired,
+  }).isRequired,
 };
 
 export default FeedbackOptions;
